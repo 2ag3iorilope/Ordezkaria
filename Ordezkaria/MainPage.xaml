@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ordezkaria.MainPage">
+
+    <ScrollView>
+        <Grid Padding="30,0" ColumnSpacing="25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!-- Para el Label -->
+                <RowDefinition Height="Auto" />
+                <!-- Para el Entry -->
+                <RowDefinition Height="*" />
+                <!-- Para el ListView -->
+            </Grid.RowDefinitions>
+
+            <Label
+                Text="Ikasle Berria"
+                TextColor="#A5BA2D"
+                Grid.Column="0"
+                Grid.Row="0" />
+
+            <Entry
+                x:Name="NameEntry"
+                Placeholder="Introduce tu nombre"
+                Grid.Column="0"
+                Grid.Row="1"
+                WidthRequest="150" 
+                HorizontalOptions="Start" />
+
+                <Button
+                Text="V"
+                Grid.Column="0"
+                Grid.Row="1"
+                Margin="-80,0,0,0" 
+                    WidthRequest="50"
+                  
+                    Clicked="OnAddButtonClicked" />
+
+                    <ListView
+                x:Name="IzenakListView"
+                Grid.Column="0"
+                Grid.Row="2"
+                Background="Grey"
+                WidthRequest="150" 
+                        HorizontalOptions="Start">
+                        <!-- Alinear al inicio como el Entry -->
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
